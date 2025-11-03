@@ -33,10 +33,22 @@ const onSale=ref(true)
 
 
         </p>
-        <p v-if="onSale">Sale</p>
+        <p v-if="onSale" class="sale">Sale</p>
         <a :href ="url" target="_blank"> Visit our store </a>
       </div>
       
     </div>
   </div>
 </template>
+
+<style>
+.product-display{
+  text-align:center;
+  margin-top:40px;
+}
+.sale {
+  color:red;
+  font-weight: bold;
+
+}
+</style>
