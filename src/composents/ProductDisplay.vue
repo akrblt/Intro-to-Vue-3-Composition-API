@@ -1,5 +1,7 @@
 <script setup>
 import ProductDetails from './ProductDetails.vue'
+import ReviewForm from './ReviewForm.vue'
+import ReviewList from './ReviewList.vue'
 import {computed,ref} from 'vue'
 import socksGreenImage from '../assets/images/socks_green.jpeg'
 import socksBlueImage from '../assets/images/socks_blue.jpeg'
@@ -57,6 +59,8 @@ const shipping=computed(()=>{
     return 5.99
 })
 
+
+
 const emit= defineEmits(['add-to-cart','remove-from-cart'])
 
 function updateVariant(index){
@@ -67,6 +71,11 @@ function updateVariant(index){
 function addToCart(){
     emit("add-to-cart",selectedVariant.value.id)
   
+}
+
+const reviews = ref([])
+function addReview(review){
+  reviews.value.push(review)
 }
 
 function removeFromcart(){
@@ -122,4 +131,8 @@ function removeFromcart(){
       </ul>
     </div>
     </div>
+    <ReviewList :reviews="reviews"/>
+    <ReviewForm @review-submitted="addReview"/>
+    
+    
 </template>
