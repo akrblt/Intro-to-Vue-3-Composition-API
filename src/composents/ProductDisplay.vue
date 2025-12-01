@@ -101,7 +101,7 @@ function removeFromcart(){
         
       <h3>Composition</h3>
         
-        <ProductDetails :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromcart"></ProductDetails>
+        <ProductDetails :details="details" ></ProductDetails>
 
         <p>{{ shipping }}</p>
         <h3>Variants</h3>

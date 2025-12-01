@@ -26,7 +26,7 @@ const removeFromcart=(id)=>{
   </div>
   <div class="cart">Cart({{ cart }})</div>
 
-  <ProductDisplay :premium="premium" @add-to-cart="updateCart"></ProductDisplay>
+  <ProductDisplay :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeFromcart"></ProductDisplay>
 
   
   
